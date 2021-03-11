@@ -45,6 +45,7 @@
     "react-three-fiber": "^5.3.19",
     "redux": "^4.0.5",
     "three": "^0.126.1",
+    "threejs-meshline": "^2.0.12",
     "tslib": "^2.0.0",
     "xstate": "^4.16.2"
   },

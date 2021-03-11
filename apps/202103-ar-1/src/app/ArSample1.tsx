@@ -1,5 +1,11 @@
 import React, { useState, Suspense } from 'react';
-import { ARCanvas, DefaultXRControllers, Interactive } from '@react-three/xr';
+import { useThree } from 'react-three-fiber';
+import {
+  ARCanvas,
+  DefaultXRControllers,
+  Interactive,
+  useHitTest,
+} from '@react-three/xr';
 import { Text } from '@react-three/drei/core/Text';
 import { Cloud } from '@react-three/drei/core/Cloud';
 
@@ -16,6 +22,12 @@ function Box({ color, size, scale, children, ...rest }: any) {
 function Button(props: any) {
   const [hover, setHover] = useState(false);
   const [color, setColor] = useState<any>('blue');
+
+  const { gl } = useThree();
+  const sessionRef = gl.xr.getSession();
+  console.log('sessionRef >> ', sessionRef);
+
+  // useHitTest(console.log);
 
   const onSelect = () => {
     setColor((Math.random() * 0xffffff) | 0);
@@ -48,7 +60,7 @@ function Button(props: any) {
 }
 export default function ARSample1(): JSX.Element {
   return (
-    <ARCanvas>
+    <ARCanvas sessionInit={{ requiredFeatures: ['hit-test'] }}>
       <ambientLight />
       <pointLight position={[0, 0, 10]} />
       <DefaultXRControllers />
