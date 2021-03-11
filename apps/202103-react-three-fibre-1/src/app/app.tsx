@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedCube from './AnimatedCube';
 
 import styles from './app.module.scss';
 
@@ -11,4 +12,4 @@ export function App() {
   return <div>Threejs</div>;
 }
 
-export default App;
+export default AnimatedCube;
