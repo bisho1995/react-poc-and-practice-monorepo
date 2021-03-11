@@ -29,6 +29,13 @@
     "react-spring-202103-1-e2e": {
       "tags": [],
       "implicitDependencies": ["react-spring-202103-1"]
+    },
+    "202103-react-three-fibre-1": {
+      "tags": []
+    },
+    "202103-react-three-fibre-1-e2e": {
+      "tags": [],
+      "implicitDependencies": ["202103-react-three-fibre-1"]
     }
   }
 }
