@@ -24,7 +24,8 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "create-react-app": "nx g @nrwl/react:app"
+    "create-react-app": "nx g @nrwl/react:app",
+    "ngrok": "./ngrok http 4200 -host-header='localhost:4200'"
   },
   "private": true,
   "dependencies": {

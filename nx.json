@@ -36,6 +36,13 @@
     "202103-react-three-fibre-1-e2e": {
       "tags": [],
       "implicitDependencies": ["202103-react-three-fibre-1"]
+    },
+    "202103-ar-1": {
+      "tags": []
+    },
+    "202103-ar-1-e2e": {
+      "tags": [],
+      "implicitDependencies": ["202103-ar-1"]
     }
   }
 }
