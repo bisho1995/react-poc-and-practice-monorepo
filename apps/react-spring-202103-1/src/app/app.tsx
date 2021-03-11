@@ -1,8 +1,13 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
+import FadeIn from './fadeIn';
 
 function App() {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
-  return <animated.div style={props}>I will fade in</animated.div>;
+  const [{ opacity }, set] = useSpring(() => ({
+    opacity: 1,
+    from: { opacity: 0 },
+    reset: true,
+  }));
+  return <animated.div style={{ opacity }}>I will fade in</animated.div>;
 }
-export default App;
+export default FadeIn;
