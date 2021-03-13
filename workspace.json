@@ -326,6 +326,106 @@
           }
         }
       }
+    },
+    "202103-a-frame-1": {
+      "root": "apps/202103-a-frame-1",
+      "sourceRoot": "apps/202103-a-frame-1/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/202103-a-frame-1",
+            "index": "apps/202103-a-frame-1/src/index.html",
+            "main": "apps/202103-a-frame-1/src/main.tsx",
+            "polyfills": "apps/202103-a-frame-1/src/polyfills.ts",
+            "tsConfig": "apps/202103-a-frame-1/tsconfig.app.json",
+            "assets": [
+              "apps/202103-a-frame-1/src/favicon.ico",
+              "apps/202103-a-frame-1/src/assets"
+            ],
+            "styles": ["apps/202103-a-frame-1/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/202103-a-frame-1/src/environments/environment.ts",
+                  "with": "apps/202103-a-frame-1/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "202103-a-frame-1:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "202103-a-frame-1:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/202103-a-frame-1/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/202103-a-frame-1"],
+          "options": {
+            "jestConfig": "apps/202103-a-frame-1/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "202103-a-frame-1-e2e": {
+      "root": "apps/202103-a-frame-1-e2e",
+      "sourceRoot": "apps/202103-a-frame-1-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/202103-a-frame-1-e2e/cypress.json",
+            "tsConfig": "apps/202103-a-frame-1-e2e/tsconfig.e2e.json",
+            "devServerTarget": "202103-a-frame-1:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "202103-a-frame-1:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/202103-a-frame-1-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   }
 }
